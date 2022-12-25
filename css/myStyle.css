@@ -23,6 +23,12 @@ a {
   color: #000;
 }
 
+/*logo*/
+.logo{
+ padding-left: 10px;
+ height: 105%;
+ width: auto;
+}
 /* Navbar */
 .navbar {
   background-color: var(--dark-pink);
@@ -35,6 +41,7 @@ a {
   width: 100%;
   position: relative;
   z-index:3;
+  height: 7%
 }
 .navbar h1 {
     font-family: Castellar, 'Lato', sans-serif;;
