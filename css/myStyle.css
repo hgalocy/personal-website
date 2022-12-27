@@ -282,7 +282,7 @@ a {
     cursor: pointer;
   }
 }
-/* Mobile */
+/* Very small/Mobile */
 @media (max-width: 550px){
   html, body{
     overflow-x:hidden;
@@ -329,4 +329,10 @@ a {
     cursor: pointer;
   }
   .card { transform: scale(.8); }
+}
+
+/*Mobile*/
+@media (pointer:none), (pointer:coarse) {
+  height: auto%;
+  width: 50%;
 }
