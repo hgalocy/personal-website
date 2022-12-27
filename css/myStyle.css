@@ -323,16 +323,19 @@ a {
     margin: 10px 25% 10% 25%;
     cursor: pointer;
 }
-  .email-form button{
-    font-size: 20px;
-    padding: 6px 25px;
-    cursor: pointer;
-  }
+.email-form button{
+  font-size: 20px;
+  padding: 6px 25px;
+  cursor: pointer;
+}
   .card { transform: scale(.8); }
 }
-
 /*Mobile*/
 @media (pointer:none), (pointer:coarse) {
-  height: auto%;
-  width: 50%;
+  .logo{
+    height: auto;
+    width: 50%;
+  }
 }
+
+
