@@ -1,0 +1,24 @@
+{
+  "name": "personal-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hgalocy/personal-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hgalocy/personal-website/issues"
+  },
+  "homepage": "https://github.com/hgalocy/personal-website#readme",
+  "dependencies": {
+    "jquery": "^3.6.3",
+    "jsdom": "^20.0.3"
+  }
+}
