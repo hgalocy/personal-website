@@ -140,7 +140,7 @@
 .card:hover { transform: scale(1.5); }
 
 /*screen is pretty small*/
-@media (max-width:1150px) {
+@media (max-width:1200px) {
     .hello-bubble{
       visibility: hidden;
     }
