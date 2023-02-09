@@ -1,4 +1,3 @@
-const fs = require('fs');
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
 function dropDown() {
@@ -19,18 +18,18 @@ window.onclick = function(event) {
     }
 }
 
-window.onload = function (){
-    fs.readFileSync("../files/projects/projectInfo.json")
-    for (key in projectJSON){
-        console.log("key: "  +  key)
-        // let name =
-        // let title = 
-        // let gitLink = 
-        // let pic = 
-        // let readMe = 
-        // let projLink =
-    } 
-}
+// window.onload = function (){
+//     fs.readFileSync("../files/projects/projectInfo.json")
+//     for (key in projectJSON){
+//         console.log("key: "  +  key)
+//         // let name =
+//         // let title = 
+//         // let gitLink = 
+//         // let pic = 
+//         // let readMe = 
+//         // let projLink =
+//     } 
+// }
 
 //load the projects listed in the json file
 class projectNode {
