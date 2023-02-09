@@ -1,0 +1,91 @@
+<!--<!DOCTYPE html>-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=375, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../styling/common.css">
+    <link rel="stylesheet" href="../styling/projectsList.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script src="../functionality/common.js"></script>
+    <script src="../functionality/projectsList.js"></script>
+    <title>Hannah Galocy</title>
+</head>
+<body>
+    <div id="header"></div>
+    <!--Filter Bar-->
+    <div class="filter-bar">
+        <div class="dropDown">
+            <button onclick="dropDown()" class="dropBtn">Sort<img id="sortLogo" src="../files/icons/sortLogo.png" alt=""></button>
+            <div id="sortDropDown" class="dropdown-content">
+            <a href="#">Most Recent</a>
+            <a href="#">Least Recent</a>
+            <a href="#">My Favorite</a>
+            </div>
+        </div>
+        <!-- <h2>Sort</h2> -->
+        
+    </div>
+    <div class="content">
+        <!-- Project Card -->
+        <div class="placard">
+            <div class="placard-row">
+                <h2>Basys3 Pinball</h2>
+                <a href="https://github.com/hgalocy/pinball_basys3"><h4>https://github.com/hgalocy/pinball_basys3</h4></a>
+            </div>
+            <div class="placard-row">
+                <img src="../files/projects/pinball/pinballMain.png" alt="" class="main-pic">
+                <div class="placard-col">
+                    <h3>Read Me:</h3>
+                    <p>
+                        I made a virtual pinball game for a Basys3 FPGA board in verilog HDL.
+                        After synthesizing, implementing, and generating bitstream given my code and constraints file with Vivado,
+                        the game is playable once the Basys3 is connected to a monitor with a VGA cable and a buzzer is wired.
+                    </p>
+                    <button class="more-btn" type="submit">More</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="placard">
+            <div class="placard-row">
+                <h2>Electron.js GUI for Pancake</h2>
+                <a href="https://github.com/hgalocy/Senior-Design-Software"><h4>https://github.com/hgalocy/Senior-Design-Software</h4></a>
+            </div>
+            <div class="placard-row">
+                <img src="../files/projects/pancake/pancakeMain.png" alt="" class="main-pic">
+                <div class="placard-col">
+                    <h3>Read Me:</h3>
+                    <p>
+                        I was responsible for the software for my senior design group project at SDSU.
+                        The Pancake Test Fixture’s main purpose was to allow users to test SEA-310 amplifiers by 
+                        utilizing a series of tests to search for manufacturing faults, record amplifier results 
+                        for analysis and produce performance metrics of the device under test (DUT) with a 
+                        user-friendly interface. 
+                    </p>
+                    <button class="more-btn" type="submit">More</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="placard">
+            <div class="placard-row">
+                <h2>This Website</h2>
+                <a href="https://github.com/hgalocy/personal-website"><h4>https://github.com/hgalocy/personal-website</h4></a>
+            </div>
+            <div class="placard-row">
+                <img src="../files/projects/thisWebsite/thisWebsiteMain.png" alt="" class="main-pic">
+                <div class="placard-col">
+                    <h3>Read Me:</h3>
+                    <p>
+                        I thought a good way to show I have experience with web development would be to create a personal website.
+                        I use Netlify.com to host so that every time I push to the above Github repository, the website will update its build.
+                    </p>
+                    <button class="more-btn" type="submit">More</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer"></div>
+</body>
+</html>
