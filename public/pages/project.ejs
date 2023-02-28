@@ -1,0 +1,59 @@
+<!--<!DOCTYPE html>-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=375, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../styling/common.css">
+    <link rel="stylesheet" href="../styling/project.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script>
+        let projectStrJSON = '<%- projectStrJSON %>';
+        projectStrJSON = JSON.parse(projectStrJSON)
+    </script>
+    <script src="../functionality/common.js"></script>
+    <script src="../functionality/project.js" defer></script>
+    <title>Hannah Galocy</title>
+</head>
+<body>
+    <div id="header"></div>
+    <!-- showcase -->
+    <div class="showcase">
+        <h1 id="projectTitle"></h1>
+        <div class="row">
+            <img id="img1">
+            <p id="read1"></p>
+            <div class="card">
+                <a href="https://github.com/hgalocy" target="_blank" rel="noopener noreferrer">
+                    <i id="gitCard" class="fab fa-github fa-10x"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2nd showcase -->
+    <div id="showcase2" class="flowerShowcase">
+        <div class="parallax">
+            <div class="parallax-inner">
+            </div>
+        </div>
+        <div class="innerCard">
+            <p id="read2"></p>
+            <img id="img2">
+            <p id="read3"></p>
+        </div>
+    </div>
+    <!--3rd showcase-->
+    <div class="showcase3">
+        <div class="row">
+            <img id="img3">
+            <p id="read4"></p>
+        </div>
+        <div class="row">
+            <img id="img4">
+        </div>
+    </div>
+    
+    <div id="footer"></div>
+</body>
+</html>

@@ -1,0 +1,93 @@
+﻿<!--<!DOCTYPE html>-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=375, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../styling/common.css">
+    <link rel="stylesheet" href="../styling/index.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script src="../functionality/common.js"></script>
+    <title>Hannah Galocy</title>
+</head>
+<body>
+    <div id="header"></div>
+    <!-- showcase -->
+    <div class="showcase">
+        <div class="hello-bubble">
+            <h2>Hello!</h2>
+            <h1>I'm Hannah :)</h1>
+        </div>
+        <div class="showcase-card">
+            <img id="portrait" src="../files/portrait.jpg" alt="">
+            <div class="about-me">
+                <h2>Little About Me:</h2>
+                <p>I'm a software engineer with a computer engineering degree and minor in computer science I earned at San Diego State University. I graduated in December 2021! Please don't hesitate to reach out. Welcome to my site!</p>
+                <form method="get" action="../files/HannahGalocy_2022.pdf">
+                    <button class="resume-button" type="submit">Download<br />Resume</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- contact -->
+    <div id="contact" class="contact">
+        <div class="parallax">
+            <div class="parallax-inner">
+                <h2 id="contactHeading">Contact Me:</h2>
+            </div>
+        </div>
+        <div class="contact-form">
+            <form action="https://getform.io/f/53acc833-9a5d-43b4-9b56-304bb6c43f63" method="POST" class="email-form">
+                <label>Full Name:</label>
+                <input name="name" type="text" placeholder="Enter your first and last name" required="required"/>
+                <label>Email Address:</label>
+                <input name="email" placeholder="Enter your email address" type="text" required="required"/>
+                <label>Message:</label>
+                <textarea name="message" placeholder="Enter your message" required="required"></textarea>
+                <button type="submit" value="Send">Send</button>
+            </form>
+        </div>
+    </div>
+    <div class="socials">
+        <div class="card">
+            <a href="https://github.com/hgalocy" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github fa-5x"></i>
+            </a>
+        </div>
+        <div class="card">
+            <a href="https://www.linkedin.com/in/hannah-galocy-0b10b3153/" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-linkedin fa-5x"></i>
+            </a>
+        </div>
+        <!--
+        <div class="card">
+            <a href="https://www.facebook.com/hannah.galocy" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-facebook fa-5x"></i>
+            </a>
+        </div>
+        -->
+        <!--
+        <div class="card">
+            <a href="https://www.instagram.com/hannah.galocy/?hl=en" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-instagram fa-5x"></i>
+            </a>
+        </div>
+        -->
+        <!--
+        <div class="card">
+            <a href="https://twitter.com/Hannah_galocy" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-twitter fa-5x"></i>
+            </a>
+        </div>
+        -->  
+    </div>
+    <div id="footer"></div>
+</body>
+<script>
+    let contactNav = '<%- contact %>';
+    if (contactNav == "true"){
+        document.getElementById('contact').scrollIntoView();
+    }
+    console.log("navigating: " + contactNav)
+</script>
+</html>

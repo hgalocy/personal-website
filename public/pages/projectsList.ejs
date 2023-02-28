@@ -1,0 +1,60 @@
+<!--<!DOCTYPE html>-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=375, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../styling/common.css">
+    <link rel="stylesheet" href="../styling/projectsList.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script>
+        let projectStrJSON = '<%- projectStrJSON %>';
+        projectStrJSON = JSON.parse(projectStrJSON)
+        // console.log(JSON.parse(myJSONObj))
+    </script>
+    <script src="../functionality/common.js"></script>
+    <script src="../functionality/projectsList.js" defer></script>
+    <title>Hannah Galocy</title>
+</head>
+<body>
+    <div id="header"></div>
+    <!--Filter Bar-->
+    <div class="filter-bar">
+        <div class="dropDown">
+            <button id="sortBtn" onclick="dropDown()" class="dropBtn">Sort<img id="sortLogo" src="../files/icons/sortLogo.png" alt=""></button>
+            <div id="sortDropDown" class="dropdown-content">
+                <div id="mostRecentOpt" class="option">Most Recent</div>
+                <div id="lessRecentOpt" class="option">Least Recent</div>
+                <div id="myFavOpt" class="option">My Favorite</div>
+            </div>
+        </div>
+    </div>
+    <div id="projectList" class="content">
+        <!--ul and li will be appended here in included script-->
+        <!-- Project Card -->
+        <!-- 
+        <li>
+        <div class="placard">
+            <div class="placard-row">
+                <h2>Basys3 Pinball</h2>
+                <a href="https://github.com/hgalocy/pinball_basys3"><h4>https://github.com/hgalocy/pinball_basys3</h4></a>
+            </div>
+            <div class="placard-row">
+                <img src="../files/projects/pinball/pinballMain.png" alt="" class="main-pic">
+                <div class="placard-col">
+                    <h3>Read Me:</h3>
+                    <p>
+                        I made a virtual pinball game for a Basys3 FPGA board in verilog HDL.
+                        After synthesizing, implementing, and generating bitstream given my code and constraints file with Vivado,
+                        the game is playable once the Basys3 is connected to a monitor with a VGA cable and a buzzer is wired.
+                    </p>
+                    <button class="more-btn" type="submit">More</button>
+                </div>
+            </div>
+        </div> 
+        </li>
+        -->
+    </div>
+    <div id="footer"></div>
+</body>
+</html>
