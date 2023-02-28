@@ -12,7 +12,6 @@ window.onload = function (){
         let readMe = projectStrJSON[project]["readMe"]
         let recent = projectStrJSON[project]["recent"]
         let fav = projectStrJSON[project]["fav"]
-        // let projLink = 
         
         let currProjectNode = new projectNode(name, title, gitLink, pic, readMe, recent, fav)
         let projectPlacard = currProjectNode.create()
@@ -54,12 +53,9 @@ lessRecentOpt.onclick = function(event){
     let ulPlacardList = document.getElementById("ulPlacardList")
     ulPlacardList.innerHTML = ""
     let mostCtr = 1
-    console.log("here")
     while(ulPlacardList.getElementsByTagName("li").length<liList.length){ //until all li items added to ul
-        console.log("here1")
         for (let i = liList.length; i>0; i--){
             if(liList[i-1].recent == mostCtr){
-                console.log("here3")
                 let li = document.createElement('li');
                 li.insertAdjacentElement("beforeend", liList[i-1].projectPlacard);
                 ulPlacardList.appendChild(li);
@@ -109,7 +105,6 @@ class projectNode {
         this.gitLink=gitLink;
         this.pic=pic;
         this.readMe=readMe;
-        // this.projLink=projLink;
         this.recent=recent;
         this.fav = fav;
     }
@@ -138,6 +133,8 @@ class projectNode {
         h3.innerHTML = "Read Me:";
         let readMe = document.createElement("p");
         readMe.innerHTML = this.readMe;
+        let projLink = document.createElement("a");
+        projLink.href = "/"+this.name
         let moreBtn = document.createElement("button");
         moreBtn.classList.add("more-btn");
         moreBtn.innerHTML = "More";
@@ -145,7 +142,8 @@ class projectNode {
         //organize elements in container
         placardCol.insertAdjacentElement("beforeend", h3);
         placardCol.insertAdjacentElement("beforeend", readMe);
-        placardCol.insertAdjacentElement("beforeend", moreBtn);
+        projLink.insertAdjacentElement("beforeend", moreBtn);
+        placardCol.insertAdjacentElement("beforeend", projLink);
     
         placardRow2.insertAdjacentElement("beforeend", img);
         placardRow2.insertAdjacentElement("beforeend", placardCol);

@@ -87,10 +87,7 @@
   background-color: var(--dark-green);
   position: relative;
   z-index:1;
-  border-bottom-left-radius: 50px;
-  border-bottom-right-radius: 50px;
-  border-top-right-radius: 50px;
-  border-top-left-radius: 50px;
+  border-radius: 50px;
   color: white;
   width: 90%;
   padding: 10px;
