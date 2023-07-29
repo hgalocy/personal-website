@@ -10,6 +10,7 @@ h3{
 }
 p{
     font-size: min(2vw, 15px);
+    overflow-y:auto;
 }
 a{
     color: var(--darker-pink)
@@ -89,7 +90,6 @@ a{
     border-radius: 25px;
     padding: 20px;
     height: 40vh;
-    overflow-y:auto;
     margin: 20px
 }
 .placard-row{

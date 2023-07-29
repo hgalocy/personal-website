@@ -62,7 +62,7 @@
 @media (max-width: 600px){
   .logo{
     height: auto;
-    width: 50%;
+    width: 60%;
   }
   html, body{
     overflow-x:hidden;
@@ -83,6 +83,6 @@
 @media (pointer:none), (pointer:coarse) {
   .logo{
     height: auto;
-    width: 60%;
+    width: 50%;
   }
 }
