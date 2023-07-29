@@ -107,7 +107,7 @@ a{
 .main-pic{
     padding-top: 20px;
     width: auto;
-    height: 30vh;
+    height: min(30vh, 50%);
 }
 .more-btn{
     background-color: var(--green);
