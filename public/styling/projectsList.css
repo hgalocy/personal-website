@@ -89,7 +89,7 @@ a{
     width: 80%;
     border-radius: 25px;
     padding: 20px;
-    height: 40vh;
+    height: min(40vh, 60%);
     margin: 20px
 }
 .placard-row{
