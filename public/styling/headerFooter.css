@@ -2,7 +2,7 @@
 .navbar {
   background-color: var(--dark-pink);
   color: #fff;
-  padding: 1.5%;
+  padding: min(1.5%, 10px);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -10,7 +10,7 @@
   width: 100%;
   position: relative;
   z-index:3;
-  height: min(7%, 115px);
+  height: min(7%, 110px);
 }
 .navbar ul {
     display: flex;
