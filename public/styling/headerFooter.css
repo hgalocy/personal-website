@@ -12,6 +12,9 @@
   z-index:3;
   height: min(7%, 110px);
 }
+.menu{
+  margin-right: 10px;
+}
 .navbar ul {
     display: flex;
 }
@@ -62,14 +65,14 @@
 @media (max-width: 600px){
   .logo{
     height: auto;
-    width: 60%;
+    width: 70%;
   }
   html, body{
     overflow-x:hidden;
   }
-  .menu{
+  /* .menu{
     width: 40%;
-  }
+  } */
   .menu a {
     margin: 0 0px;
     font-size: 12px;
@@ -79,10 +82,10 @@
   }
 }
 
-/*Mobile*/
+/* Mobile
 @media (pointer:none), (pointer:coarse) {
   .logo{
     height: auto;
     width: 50%;
   }
-}
+} */
