@@ -106,8 +106,8 @@ a{
 }
 .main-pic{
     padding-top: 20px;
-    width: auto;
-    height: min(30vh, 50%);
+    width: min(30vw, 60%);
+    height: auto;
 }
 .more-btn{
     background-color: var(--green);
