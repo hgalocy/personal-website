@@ -106,7 +106,7 @@ a{
 }
 .main-pic{
     padding-top: 20px;
-    width: min(50vw, 60%);
+    width: min(30vw, 60%);
     height: auto;
 }
 .more-btn{
