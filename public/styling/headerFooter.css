@@ -11,7 +11,7 @@
   width: 100%;
   position: relative;
   z-index:3;
-  height: min(140px, 7%);
+  height: min(7%, 90px);
 }
 .navbar ul {
     display: flex;
