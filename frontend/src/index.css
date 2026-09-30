@@ -14,26 +14,32 @@
   -webkit-font-smoothing: antialiased;
   line-height: 1.5;
 }
+
 * {
   box-sizing: border-box;
 }
+
 body {
   margin: 0;
   min-width: 320px;
 }
+
 a {
   color: inherit;
   text-decoration: none;
 }
+
 a:focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 6px;
   border-radius: 3px;
 }
+
 ::selection {
   color: var(--color-bg);
   background: var(--color-accent);
 }
+
 .portfolio {
   max-width: 1800px;
   min-height: 100svh;
@@ -44,6 +50,7 @@ a:focus-visible {
     transparent 65%
   );
 }
+
 .skip-link {
   position: absolute;
   top: 1rem;
@@ -54,9 +61,11 @@ a:focus-visible {
   background: var(--color-text);
   transform: translateY(-200%);
 }
+
 .skip-link:focus {
   transform: translateY(0);
 }
+
 .site-header {
   position: relative;
   z-index: 2;
@@ -66,19 +75,23 @@ a:focus-visible {
   min-height: 112px;
   padding-inline: var(--page-gutter);
 }
+
 .wordmark {
   font-size: 2rem;
   font-weight: 650;
   letter-spacing: -0.09em;
 }
+
 .wordmark span {
   color: var(--color-accent);
 }
+
 .site-header nav {
   display: flex;
   gap: clamp(1.25rem, 3.4vw, 3.5rem);
   align-items: center;
 }
+
 .site-header nav a {
   display: inline-flex;
   align-items: center;
@@ -87,23 +100,28 @@ a:focus-visible {
   font-size: 0.875rem;
   letter-spacing: 0.03em;
 }
+
 .site-header nav a:hover,
 .github-link:hover {
   color: var(--color-text);
 }
+
 .hero {
   position: relative;
   isolation: isolate;
   display: grid;
-  grid-template-columns: 62% 38%;
+  grid-template-columns: 1fr;
   align-items: center;
   min-height: min(780px, calc(100svh - 112px));
 }
+
 .hero-content {
   position: relative;
   z-index: 1;
+  width: 62%;
   padding: 5rem 0 7rem var(--page-gutter);
 }
+
 .eyebrow {
   display: flex;
   align-items: center;
@@ -114,11 +132,13 @@ a:focus-visible {
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
+
 .eyebrow-line {
   width: 2rem;
   height: 1px;
   background: var(--color-accent);
 }
+
 h1 {
   margin: 0;
   font-size: clamp(3.5rem, 7.2vw, 7.5rem);
@@ -126,11 +146,13 @@ h1 {
   line-height: 1.07;
   letter-spacing: -0.065em;
 }
+
 .smile {
   color: var(--color-accent);
   white-space: nowrap;
   font-weight: 350;
 }
+
 .hero-description {
   max-width: 25rem;
   margin: 2rem 2rem 0 0;
@@ -138,6 +160,7 @@ h1 {
   font-size: clamp(1rem, 1.35vw, 1.125rem);
   line-height: 1.85;
 }
+
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
@@ -146,6 +169,7 @@ h1 {
   margin-top: 2.5rem;
   font-size: 0.875rem;
 }
+
 .button-primary {
   display: inline-flex;
   align-items: center;
@@ -159,10 +183,12 @@ h1 {
   background: var(--color-accent);
   font-weight: 600;
 }
+
 .button-primary:hover {
   background: var(--color-text);
   border-color: var(--color-text);
 }
+
 .github-link {
   display: inline-flex;
   align-items: center;
@@ -170,17 +196,20 @@ h1 {
   min-height: 44px;
   color: var(--color-muted);
 }
+
 .github-link span {
   color: var(--color-lavender);
 }
+
 .hero-image {
-  position: relative;
-  align-self: stretch;
-  min-height: 650px;
+  position: absolute;
+  inset: 0 0 0 auto;
+  width: 55%;
   overflow: hidden;
-  /* Fade the edge while preserving the subject and twilight colors. */
-  mask-image: linear-gradient(to right, transparent, black 22%);
+  /* Overlap the text column, with a gradual fade protecting its contrast. */
+  mask-image: linear-gradient(to right, transparent, black 40%);
 }
+
 .hero-image img {
   display: block;
   width: 100%;
@@ -188,8 +217,9 @@ h1 {
   position: absolute;
   inset: 0;
   object-fit: cover;
-  object-position: 70% 58%;
+  object-position: 70% 42%;
 }
+
 .hero-image::after {
   position: absolute;
   inset: 0;
@@ -203,52 +233,112 @@ h1 {
   );
   pointer-events: none;
 }
+
+@media (min-width: 761px) {
+  .hero {
+    container-type: inline-size;
+    --hero-frame-height: min(780px, calc(100svh - 112px));
+    /* The portrait is 3:4. Keep the original cover crop's 42% top offset. */
+    --photo-top-crop: max(
+      0px,
+      calc((55cqw * 4 / 3 - var(--hero-frame-height)) * 0.42)
+    );
+  }
+
+  .hero-content {
+    grid-area: 1 / 1;
+    align-self: start;
+    min-height: var(--hero-frame-height);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .hero-image {
+    grid-area: 1 / 1;
+    position: relative;
+    inset: auto;
+    justify-self: end;
+    align-self: start;
+  }
+
+  .hero-image img {
+    position: relative;
+    height: auto;
+    min-height: var(--hero-frame-height);
+    /* Remove only the sky already cropped above; let the bottom stay in flow. */
+    margin-top: calc(-1 * var(--photo-top-crop));
+  }
+
+  .hero-image::after {
+    background: linear-gradient(
+      to bottom,
+      var(--color-bg),
+      transparent calc(var(--hero-frame-height) * 0.18),
+      transparent 75%,
+      var(--color-bg)
+    );
+  }
+}
+
 @media (min-width: 1800px) {
   .hero-image {
     mask-image: linear-gradient(
       to right,
       transparent,
-      black 22%,
+      black 40%,
       black 90%,
       transparent
     );
   }
 }
+
 @media (max-width: 760px) {
   .site-header {
     min-height: 88px;
   }
+
   .hero {
-    grid-template-columns: 1fr;
-    min-height: auto;
+    align-items: start;
+    min-height: calc(100svh - 88px);
   }
+
   .hero-content {
-    padding: 3.5rem var(--page-gutter) 1rem;
+    width: 100%;
+    /* Reserve a photo window without stacking the full portrait in the flow. */
+    padding: clamp(1.5rem, 3svh, 2rem) var(--page-gutter) 19rem;
   }
+
   .eyebrow {
     margin-bottom: 1.5rem;
     font-size: 0.75rem;
   }
+
   h1 {
     font-size: clamp(3.25rem, 11vw, 5rem);
   }
+
   .hero-description {
     margin-top: 1.5rem;
     margin-right: 0;
   }
+
   .hero-actions {
     gap: 1.5rem;
     margin-top: 2rem;
   }
+
   .hero-image {
-    min-height: 0;
-    height: clamp(430px, 110vw, 700px);
-    margin-top: 1rem;
-    mask-image: linear-gradient(to bottom, transparent, black 14%);
+    inset: auto 0 0;
+    width: 100%;
+    height: clamp(320px, 48svh, 480px);
+    mask-image: linear-gradient(to bottom, transparent, black 32%);
   }
+
   .hero-image img {
-    object-position: 65% 60%;
+    object-position: 65% 40%;
   }
+
   .hero-image::after {
     background: linear-gradient(to bottom, transparent 78%, var(--color-bg));
   }
