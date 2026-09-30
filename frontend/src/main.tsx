@@ -6,7 +6,9 @@ import './index.css'
 const rootElement = document.getElementById('root')
 
 if (!rootElement) {
-  throw new Error('The HTML entry point must contain an element with id="root".')
+  throw new Error(
+    'The HTML entry point must contain an element with id="root".',
+  )
 }
 
 createRoot(rootElement).render(

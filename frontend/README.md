@@ -1,89 +1,133 @@
-# Frontend starter
+# Hannah Galocy — Personal Website
 
-A standalone React + TypeScript + Vite project. The Express/EJS application in
-the repository root continues to use its own package.json, dependencies, and
-startup command. This starter contains no migrated website content or Cloudflare
-configuration.
+Personal portfolio built with React and TypeScript and hosted on Cloudflare Workers.
 
-## Run locally
+The new frontend is currently being developed separately from the original
+Express/EJS site, which remains in the repository root during migration.
 
-Use Node.js 20.19+ within version 20, or Node.js 22.12 or newer. This starter was
-set up with Node.js 24.18.0.
+## Tech Stack
 
-From the repository root in PowerShell:
+| Technology | Purpose |
+| --- | --- |
+| React | Component-based user interface |
+| TypeScript | Static typing for JavaScript |
+| Vite | Development server and production build tool |
+| ESLint | Code-quality and error checking |
+| Prettier | Consistent code formatting |
+| Cloudflare Workers | Hosts the production static assets |
+| Wrangler | Cloudflare development and deployment CLI |
 
-```powershell
-cd frontend
-npm.cmd install
-npm.cmd run dev
+## Development
+
+Requires Node.js 22.13+ or 24+.
+
+From `frontend/`:
+
+```bash
+npm install
+npm run dev
 ```
 
-Open http://localhost:5173. Edit `src/App.tsx` and save to see changes. Press
-Ctrl+C in the terminal to stop the server. The port is fixed: if 5173 is occupied,
-Vite reports an error instead of silently selecting another port.
+The development server runs at:
 
-`npm.cmd` avoids PowerShell's script execution restriction on `npm.ps1`. On macOS,
-Linux, or shells without that restriction, use `npm` for the same commands.
-Dependencies have already been installed for this checkout; installation is
-needed again after a fresh clone or dependency changes. With an existing lockfile,
-`npm.cmd ci` performs a reproducible clean install of this frontend's dependencies.
+`http://localhost:5173`
 
-## Check and build
+## Code Quality
 
-Run these commands from `frontend/`:
+Run all checks:
 
-```powershell
-npm.cmd run build
-npm.cmd run preview
+```bash
+npm run check
 ```
 
-`build` first runs TypeScript checking, then writes production HTML, JavaScript,
-and CSS to `dist/`. `preview` serves that build locally, normally at
-http://localhost:4173; use the URL printed in the terminal. Preview is for checking
-the build, not deploying it. No deployment command is configured.
+This runs:
 
-The development server transforms TypeScript quickly but does not perform full
-type checking. Run `npm.cmd run build` to check types, or run
-`npm.cmd exec tsc -- --noEmit` to check types without generating a build.
+- ESLint
+- Prettier formatting checks
+- TypeScript type checking
+- Vite production build
 
-## How the files fit together
+Individual commands:
 
-1. Vite serves `index.html`, whose module script loads `src/main.tsx`.
-2. `main.tsx` loads the shared CSS and mounts React into `<div id="root">`.
-3. `App.tsx` defines the starter UI. A `.tsx` file combines TypeScript with JSX,
-   the HTML-like syntax used to describe React elements.
-4. `vite.config.ts` enables React Fast Refresh, which updates components during
-   development, and sets the development port.
-5. `tsconfig.json` enables strict checking for the source and Vite configuration.
-   TypeScript emits no files; Vite handles the browser build. Bundler module
-   resolution makes TypeScript interpret imports in a way suited to Vite.
+```bash
+npm run lint
+npm run lint:fix
+npm run format:check
+npm run format
+```
 
-`StrictMode` adds development checks to help surface mistakes as the app grows.
-These checks can cause extra renders during development.
+## Build
 
-## Why a separate package?
+Create a production build:
 
-This directory has its own `package.json`, lockfile, and `node_modules/`. Its
-`"type": "module"` enables modern JavaScript imports within this directory without
-changing the root server's CommonJS `require()` behavior. Run frontend npm
-commands here so dependency changes stay within this project.
+```bash
+npm run build
+```
 
-React and React DOM are application dependencies. Vite, TypeScript, the React
-plugin, and type declarations are development/build dependencies. The type
-declarations describe APIs for the checker; they do not add browser functionality.
+Vite outputs the optimized site to `dist/`.
 
-One TypeScript configuration covers this small project. Node types support the
-Vite configuration, which runs in Node; `src/` runs in the browser, so do not use
-Node APIs there. Separate browser/tooling TypeScript configurations can be added
-later if stricter runtime boundaries become useful.
+Preview the production build locally:
 
-The frontend `.gitignore` excludes `node_modules/` and `dist/`. Commit the
-lockfile to preserve resolved dependency versions. No npm workspace or root
-script changes are needed. To run the old site alongside this starter, open
-another terminal at the repository root and run `npm.cmd start`; Express defaults
-to port 3030, while Vite uses 5173.
+```bash
+npm run preview
+```
 
-References: [Vite guide](https://vite.dev/guide/),
-[React createRoot](https://react.dev/reference/react-dom/client/createRoot),
-[React StrictMode](https://react.dev/reference/react/StrictMode), and
-[TypeScript module resolution](https://www.typescriptlang.org/tsconfig/moduleResolution).
+## Deployment
+
+The frontend is deployed as static assets using Cloudflare Workers.
+Deployment configuration lives in `wrangler.jsonc`.
+
+### Authenticate
+
+First-time setup:
+
+```bash
+npx wrangler login
+npx wrangler whoami
+```
+
+### Test with Cloudflare locally
+
+```bash
+npm run preview:worker
+```
+
+### Validate deployment
+
+```bash
+npm run deploy:dry-run
+```
+
+### Deploy
+
+```bash
+npm run deploy
+```
+
+The deployment process runs the project checks and production build before
+uploading `dist/` to Cloudflare.
+
+## Architecture
+
+```text
+React + TypeScript
+        ↓
+       Vite
+        ↓
+      dist/
+        ↓
+Cloudflare Workers
+        ↓
+       CDN
+```
+
+The current deployment serves static assets only. No backend Worker is required
+at this stage.
+
+## Migration
+
+The original Express/EJS application remains in the repository root while the
+new frontend is developed and tested separately.
+
+The existing production site is unaffected by frontend development until the
+Cloudflare deployment replaces it.
