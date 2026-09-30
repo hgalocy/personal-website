@@ -1,0 +1,37 @@
+[
+  {
+    "slug": "project-one",
+    "title": "Project One",
+    "image": "/images/projects/project-one.svg",
+    "description": "Placeholder project description. Share the idea behind this project, what you built, and what you learned along the way.",
+    "link": "https://example.com/#project-one"
+  },
+  {
+    "slug": "project-two",
+    "title": "Project Two",
+    "image": "/images/projects/project-two.svg",
+    "description": "Placeholder project description. Share the idea behind this project, what you built, and what you learned along the way.",
+    "link": "https://example.com/#project-two"
+  },
+  {
+    "slug": "project-three",
+    "title": "Project Three",
+    "image": "/images/projects/project-three.svg",
+    "description": "Placeholder project description. Share the idea behind this project, what you built, and what you learned along the way.",
+    "link": "https://example.com/#project-three"
+  },
+  {
+    "slug": "project-four",
+    "title": "Project Four",
+    "image": "/images/projects/project-four.svg",
+    "description": "Placeholder project description. Share the idea behind this project, what you built, and what you learned along the way.",
+    "link": "https://example.com/#project-four"
+  },
+  {
+    "slug": "project-five",
+    "title": "Project Five",
+    "image": "/images/projects/project-five.svg",
+    "description": "Placeholder project description. Share the idea behind this project, what you built, and what you learned along the way.",
+    "link": "https://example.com/#project-five"
+  }
+]

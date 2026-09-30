@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" fill="none">
+  <defs>
+    <linearGradient id="sky" x1="600" y1="0" x2="600" y2="800" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0d1828"/>
+      <stop offset="1" stop-color="#394763"/>
+    </linearGradient>
+    <linearGradient id="wave" x1="800" y1="310" x2="600" y2="720" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#777b9d"/>
+      <stop offset="1" stop-color="#0d1828"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#sky)" d="M0 0h1200v800H0z"/>
+  <circle cx="875" cy="240" r="65" fill="#d59a9b"/>
+  <path d="M0 500c210 0 220-190 430-190s260 245 440 245 220-155 330-155v400H0Z" fill="url(#wave)"/>
+  <path d="M0 580c210 0 220-190 430-190s260 245 440 245 220-155 330-155M0 630c210 0 220-190 430-190s260 245 440 245 220-155 330-155M0 680c210 0 220-190 430-190s260 245 440 245 220-155 330-155" stroke="#777b9d" stroke-opacity=".5"/>
+  <path d="M0 500c210 0 220-190 430-190s260 245 440 245 220-155 330-155" stroke="#f3efe5" stroke-opacity=".35"/>
+  <circle cx="325" cy="180" r="3" fill="#f3efe5" opacity=".65"/>
+  <circle cx="625" cy="245" r="2" fill="#f3efe5" opacity=".5"/>
+</svg>

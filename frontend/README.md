@@ -7,19 +7,19 @@ Express/EJS site, which remains in the repository root during migration.
 
 ## Tech Stack
 
-| Technology | Purpose |
-| --- | --- |
-| React | Component-based user interface |
-| TypeScript | Static typing for JavaScript |
-| Vite | Development server and production build tool |
-| ESLint | Code-quality and error checking |
-| Prettier | Consistent code formatting |
-| Cloudflare Workers | Hosts the production static assets |
-| Wrangler | Cloudflare development and deployment CLI |
+| Technology         | Purpose                                      |
+| ------------------ | -------------------------------------------- |
+| React              | Component-based user interface               |
+| TypeScript         | Static typing for JavaScript                 |
+| Vite               | Development server and production build tool |
+| ESLint             | Code-quality and error checking              |
+| Prettier           | Consistent code formatting                   |
+| Cloudflare Workers | Hosts the production static assets           |
+| Wrangler           | Cloudflare development and deployment CLI    |
 
 ## Development
 
-Requires Node.js 22.13+ or 24+.
+Requires Node.js 22.22+ or 24+.
 
 From `frontend/`:
 
@@ -108,6 +108,31 @@ The deployment process runs the project checks and production build before
 uploading `dist/` to Cloudflare.
 
 ## Architecture
+
+### Pages and project data
+
+React Router connects `/` to the existing homepage, `/work` to the project grid,
+and `/work/:slug` to a project detail page. The shared header uses router links
+for internal navigation. Unknown URLs and project slugs show a not-found page.
+
+Edit `data/projects.json` to replace the five placeholder projects. Each entry
+has a unique, URL-safe `slug` plus `title`, `image`, `description`, and `link`.
+The typed module `src/data/projects.ts` imports this JSON once. `WorkPage` passes
+each entry to the reusable `ProjectCard`; `ProjectPage` finds that same entry by
+the URL slug. The two views therefore share titles, images, and content.
+
+Placeholder SVGs live in `public/images/projects/`. An image value such as
+`/images/projects/project-one.svg` refers to that public folder; replace it with
+your own image path when ready. The external links currently use `example.com`.
+JSON is bundled at build time, so redeploy after editing the data.
+
+`SiteHeader` is shared across pages. `HomePage` contains the existing hero;
+`work.css` styles the project pages without changing the hero stylesheet.
+Wrangler's existing `single-page-application` asset fallback supports direct
+visits and refreshes at URLs such as `/work/project-one`.
+
+Routing follows React Router's
+[declarative setup](https://reactrouter.com/start/declarative/installation).
 
 ```text
 React + TypeScript
