@@ -7,15 +7,15 @@ Express/EJS site, which remains in the repository root during migration.
 
 ## Tech Stack
 
-| Technology | Purpose |
-| --- | --- |
-| React | Component-based user interface |
-| TypeScript | Static typing for JavaScript |
-| Vite | Development server and production build tool |
-| ESLint | Code-quality and error checking |
-| Prettier | Consistent code formatting |
-| Cloudflare Workers | Hosts the production static assets |
-| Wrangler | Cloudflare development and deployment CLI |
+| Technology         | Purpose                                      |
+| ------------------ | -------------------------------------------- |
+| React              | Component-based user interface               |
+| TypeScript         | Static typing for JavaScript                 |
+| Vite               | Development server and production build tool |
+| ESLint             | Code-quality and error checking              |
+| Prettier           | Consistent code formatting                   |
+| Cloudflare Workers | Hosts the production static assets           |
+| Wrangler           | Cloudflare development and deployment CLI    |
 
 ## Development
 
