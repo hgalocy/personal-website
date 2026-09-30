@@ -115,24 +115,80 @@ React Router connects `/` to the existing homepage, `/work` to the project grid,
 and `/work/:slug` to a project detail page. The shared header uses router links
 for internal navigation. Unknown URLs and project slugs show a not-found page.
 
-Edit `data/projects.json` to replace the five placeholder projects. Each entry
-has a unique, URL-safe `slug` plus `title`, `image`, `description`, and `link`.
-The typed module `src/data/projects.ts` imports this JSON once. `WorkPage` passes
-each entry to the reusable `ProjectCard`; `ProjectPage` finds that same entry by
-the URL slug. The two views therefore share titles, images, and content.
+Edit `data/projects.json` to update Navi, Pancake, and Pinball. The typed module
+`src/data/projects.ts` imports this JSON once. `WorkPage` passes each entry to
+`ProjectCard`; the shared `ProjectPage` finds the same entry by its URL slug.
+Both views use the same title and hero image.
 
-Placeholder SVGs live in `public/images/projects/`. An image value such as
-`/images/projects/project-one.svg` refers to that public folder; replace it with
-your own image path when ready. The external links currently use `example.com`.
-JSON is bundled at build time, so redeploy after editing the data.
+Each project contains:
+
+| Field           | Purpose                                                                  |
+| --------------- | ------------------------------------------------------------------------ |
+| `slug`, `title` | Stable URL segment and display title.                                    |
+| `heroImage`     | Image object used on the card and detail page.                           |
+| `summary`       | Short introduction near the page title.                                  |
+| `technologies`  | Optional array of tag strings; omit it to hide the tags.                 |
+| `externalLink`  | Optional `{ "label": "View on GitHub", "url": "https://..." }`.          |
+| `sections`      | Ordered array of content sections. Add, remove, or reorder these freely. |
+
+Every section needs a unique `id`, a `type`, and a `heading`:
+
+| Type      | Content fields                                  | Layout                                                                                                            |
+| --------- | ----------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| `text`    | `paragraphs`                                    | Heading beside readable-width paragraphs on desktop.                                                              |
+| `image`   | `image`, optional `paragraphs`                  | Wide image below its heading and any text.                                                                        |
+| `split`   | `paragraphs`, `image`, optional `imagePosition` | Text beside one image; `imagePosition` is `left` or `right` (default). Stacks with text first on smaller screens. |
+| `gallery` | `images`, optional `paragraphs`                 | Responsive grid supporting any number of images.                                                                  |
+
+`ProjectSection` selects the layout by `type`. `ProjectFigure` handles image
+dimensions, alt text, optional captions, and a link to view the original image.
+Each paragraph is a separate string, rendered as text, not HTML.
+
+Example section:
+
+```json
+{
+  "id": "fixture",
+  "type": "split",
+  "heading": "Connecting software and hardware",
+  "paragraphs": ["First paragraph.", "Second paragraph."],
+  "imagePosition": "right",
+  "image": {
+    "src": "pancake/fixture.png",
+    "alt": "Amplifier circuit board on the test fixture",
+    "width": 1826,
+    "height": 1246,
+    "caption": "Optional image caption."
+  }
+}
+```
+
+Image `src` values are relative to `data/images/`, so `pancake/fixture.png` means
+`frontend/data/images/pancake/fixture.png`. Use forward slashes in JSON, including
+on Windows. The same image object format applies to `heroImage`, `image`, and
+each entry in `images`. `src` and `alt` are required; captions and original pixel
+dimensions are optional. Including dimensions avoids layout jumps as images load.
+
+The data module uses Vite's asset imports to resolve these files to production
+URLs; plain `data/images/...` browser URLs would not survive the build. Supported
+formats are PNG, JPG/JPEG, SVG, WebP, and AVIF. Missing images and unsupported
+section types produce descriptive errors. JSON is bundled at build time, so
+redeploy after changing the data.
+
+Pancake and Pinball use the supplied images and legacy project descriptions.
+Navi uses placeholder artwork from `data/images/placeholder/`, placeholder copy,
+and an `example.com` link until its own content is available. No legacy files
+are imported at runtime or modified by the new pages.
 
 `SiteHeader` is shared across pages. `HomePage` contains the existing hero;
-`work.css` styles the project pages without changing the hero stylesheet.
+`work.css` styles the Work grid, and `project.css` contains the new detail-page
+styles. Neither changes the hero stylesheet.
 Wrangler's existing `single-page-application` asset fallback supports direct
-visits and refreshes at URLs such as `/work/project-one`.
+visits and refreshes at URLs such as `/work/pinball`.
 
 Routing follows React Router's
 [declarative setup](https://reactrouter.com/start/declarative/installation).
+Local image resolution uses [Vite glob imports](https://vite.dev/guide/features.html#glob-import).
 
 ```text
 React + TypeScript

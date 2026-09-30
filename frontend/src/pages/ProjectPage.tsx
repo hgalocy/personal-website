@@ -1,6 +1,9 @@
-import { Link, useParams } from 'react-router'
+﻿import { Link, useParams } from 'react-router'
+import ProjectFigure from '../components/ProjectFigure'
+import ProjectSection from '../components/ProjectSection'
 import { projects } from '../data/projects'
 import NotFoundPage from './NotFoundPage'
+import '../project.css'
 
 export default function ProjectPage() {
   const { slug } = useParams()
@@ -9,30 +12,59 @@ export default function ProjectPage() {
   if (!project) return <NotFoundPage />
 
   return (
-    <article className="work-page project-page" aria-labelledby="project-title">
-      <title>{`${project.title} — Hannah Galocy`}</title>
+    <article className="case-study" aria-labelledby="project-title">
+      <title>{`${project.title} \u2014 Hannah Galocy`}</title>
       <Link className="back-link" to="/work">
-        <span aria-hidden="true">←</span> Back to Work
+        <span aria-hidden="true">&larr;</span> Back to Work
       </Link>
-      <h1 className="work-title" id="project-title">
-        {project.title}
-      </h1>
-      <div className="project-detail">
-        <img
-          className="project-detail-image"
-          src={project.image}
-          alt={`${project.title} placeholder illustration`}
-          width="1200"
-          height="800"
-        />
-        <div className="project-detail-copy">
-          <h2>About the project</h2>
-          <p>{project.description}</p>
-          <a className="project-external-link" href={project.link}>
-            Visit project (placeholder) <span aria-hidden="true">↗</span>
-          </a>
+
+      <header className="case-header">
+        <div>
+          <p className="eyebrow">
+            <span className="eyebrow-line" aria-hidden="true" />
+            Project notes
+          </p>
+          <h1 className="case-title" id="project-title">
+            {project.title}
+          </h1>
         </div>
+        <div className="case-overview">
+          <p className="case-summary">{project.summary}</p>
+          {project.technologies && project.technologies.length > 0 && (
+            <ul className="case-tags" aria-label="Technologies">
+              {project.technologies.map((technology) => (
+                <li key={technology}>{technology}</li>
+              ))}
+            </ul>
+          )}
+          {project.externalLink && (
+            <a className="case-external-link" href={project.externalLink.url}>
+              {project.externalLink.label} <span aria-hidden="true">↗</span>
+            </a>
+          )}
+        </div>
+      </header>
+
+      <div className="case-hero">
+        <ProjectFigure image={project.heroImage} priority />
       </div>
+
+      <div className="case-sections">
+        {project.sections.map((section, index) => (
+          <ProjectSection key={section.id} section={section} index={index} />
+        ))}
+      </div>
+
+      <footer className="case-footer">
+        <Link className="back-link" to="/work">
+          <span aria-hidden="true">&larr;</span> Back to Work
+        </Link>
+        {project.externalLink && (
+          <a className="case-external-link" href={project.externalLink.url}>
+            {project.externalLink.label} <span aria-hidden="true">↗</span>
+          </a>
+        )}
+      </footer>
     </article>
   )
 }

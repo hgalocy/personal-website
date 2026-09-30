@@ -7,7 +7,7 @@ export default function ProjectCard({ project }: { project: Project }) {
       <Link className="project-card" to={`/work/${project.slug}`}>
         <div className="project-card-image">
           <img
-            src={project.image}
+            src={project.heroImage.src}
             alt=""
             width="1200"
             height="800"
