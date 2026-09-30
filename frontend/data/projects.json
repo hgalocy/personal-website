@@ -1,37 +1,23 @@
 [
   {
-    "slug": "project-one",
-    "title": "Project One",
+    "slug": "navi",
+    "title": "Navi AI Companion Bot",
     "image": "/images/projects/project-one.svg",
     "description": "Placeholder project description. Share the idea behind this project, what you built, and what you learned along the way.",
     "link": "https://example.com/#project-one"
   },
   {
-    "slug": "project-two",
-    "title": "Project Two",
-    "image": "/images/projects/project-two.svg",
+    "slug": "pancake",
+    "title": "Pancake Test Fixture",
+    "image": "data/images/pancake/pancakeMain.png",
     "description": "Placeholder project description. Share the idea behind this project, what you built, and what you learned along the way.",
     "link": "https://example.com/#project-two"
   },
   {
-    "slug": "project-three",
-    "title": "Project Three",
-    "image": "/images/projects/project-three.svg",
+    "slug": "pinball",
+    "title": "Basys3 Pinball",
+    "image": "data/images/pinball/pinballMain.png",
     "description": "Placeholder project description. Share the idea behind this project, what you built, and what you learned along the way.",
     "link": "https://example.com/#project-three"
-  },
-  {
-    "slug": "project-four",
-    "title": "Project Four",
-    "image": "/images/projects/project-four.svg",
-    "description": "Placeholder project description. Share the idea behind this project, what you built, and what you learned along the way.",
-    "link": "https://example.com/#project-four"
-  },
-  {
-    "slug": "project-five",
-    "title": "Project Five",
-    "image": "/images/projects/project-five.svg",
-    "description": "Placeholder project description. Share the idea behind this project, what you built, and what you learned along the way.",
-    "link": "https://example.com/#project-five"
   }
 ]
