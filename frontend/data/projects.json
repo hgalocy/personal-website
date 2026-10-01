@@ -4,18 +4,26 @@
     "title": "Navi AI Companion Bot",
     "heroImage": {
       "src": "placeholder/project-two.svg",
-      "alt": "Abstract twilight illustration used as a placeholder for Navi",
+      "alt": "Navi's animated virtual face displayed on screen",
       "width": 1200,
       "height": 800,
-      "caption": "Placeholder artwork. Photos of Navi will be added here."
+      "caption": "Navi's current animated face interface."
     },
-    "summary": "An AI companion bot. The full project story is coming soon.",
+    "summary": "Navi is an in-progress AI companion robot built around natural conversation, persistent memory, and an expressive animated face. The project currently combines a responsive visual interface, speech output, and an OpenAI-powered conversational brain with long-term memory.",
     "technologies": [
-      "AI"
+      "Python",
+      "OpenAI API",
+      "SQLite",
+      "Pyglet",
+      "ModernGL",
+      "Flask",
+      "Piper TTS",
+      "Faster-Whisper",
+      "Jetson Xavier NX"
     ],
     "externalLink": {
-      "label": "Project link (placeholder)",
-      "url": "https://example.com/#navi"
+      "label": "View Navi on GitHub",
+      "url": "https://github.com/YOUR-USERNAME/YOUR-NAVI-REPO"
     },
     "sections": [
       {
@@ -23,23 +31,24 @@
         "type": "text",
         "heading": "The idea",
         "paragraphs": [
-          "Placeholder: Introduce the problem Navi explores, who the companion is for, and what inspired the project.",
-          "Placeholder: Describe your role and the experience you wanted to create."
+          "Navi started as an experiment in building an AI companion that feels more like a persistent character than a traditional voice assistant. Instead of only responding to isolated prompts, Navi is designed to remember previous conversations, develop continuity over time, and communicate through both speech and an expressive animated face.",
+          "The long-term goal is to turn Navi into a self-contained physical companion robot. The project is still in active development, with the current focus on building and connecting the core software systems before completing the physical hardware."
         ]
       },
       {
         "id": "interaction",
         "type": "split",
-        "heading": "Designing the interaction",
+        "heading": "Giving Navi a personality",
         "paragraphs": [
-          "Placeholder: Walk through an interaction with Navi and the decisions behind it. Add implementation details when they are ready."
+          "Navi currently has a real-time animated face with responsive eyes and mouth movements, along with a synthesized voice for spoken responses. The visual interface is built to make conversations feel more expressive than interacting with a standard chatbot.",
+          "Her conversational system is connected to OpenAI and backed by a custom memory layer, allowing important details from previous conversations to persist rather than treating every interaction as completely new."
         ],
         "image": {
-          "src": "placeholder/project-four.svg",
-          "alt": "Abstract twilight illustration used as a placeholder for Navi",
+          "src": "placeholder/project-three.svg",
+          "alt": "Navi's animated eyes and mouth interface",
           "width": 1200,
           "height": 800,
-          "caption": "Placeholder for a prototype or interaction image."
+          "caption": "Navi's face is rendered in real time and designed to react during conversation."
         }
       },
       {
@@ -47,22 +56,24 @@
         "type": "gallery",
         "heading": "Inside the build",
         "paragraphs": [
-          "Placeholder: Use this space for experiments, implementation notes, and lessons learned."
+          "Navi is built as a collection of independent systems for conversation, memory, speech, and animation. The conversational backend handles requests to the language model while a SQLite-based memory system stores selected information for future interactions.",
+          "Speech generation is handled locally using Piper TTS, while the interface uses Pyglet and ModernGL to render Navi's face. The project is being developed toward eventually running as a distributed system with a Jetson Xavier NX inside the physical robot and a more powerful computer handling heavier AI workloads.",
+          "Current development is focused on improving the conversation pipeline, memory behavior, speech recognition, facial responsiveness, and communication between Navi's hardware and AI services."
         ],
         "images": [
           {
-            "src": "placeholder/project-one.svg",
-            "alt": "Abstract twilight illustration used as a placeholder for Navi",
+            "src": "placeholder/project-four.svg",
+            "alt": "Close-up of Navi's animated face",
             "width": 1200,
             "height": 800,
-            "caption": "Placeholder for an early prototype."
+            "caption": "The current animated face prototype."
           },
           {
             "src": "placeholder/project-five.svg",
-            "alt": "Abstract twilight illustration used as a placeholder for Navi",
+            "alt": "Navi development environment showing the AI and memory system",
             "width": 1200,
             "height": 800,
-            "caption": "Placeholder for a later iteration."
+            "caption": "Developing Navi's conversational and memory systems."
           }
         ]
       }
@@ -76,9 +87,9 @@
       "alt": "Pancake manufacturing test interface with amplifier test results",
       "width": 2086,
       "height": 1192,
-      "caption": "The manufacturing test interface, built with Electron and Node.js."
+      "caption": "The manufacturing test interface, built with Electron and Node.js showing a successful end-to-end test."
     },
-    "summary": "A desktop interface for testing SEA-310 amplifiers, collecting measurements, and diagnosing manufacturing faults.",
+    "summary": "A desktop interface for a bed of nails test fixture for SEA-310 amplifiers, collecting measurements, and diagnosing manufacturing faults.",
     "technologies": [
       "Electron",
       "Node.js",
@@ -96,7 +107,7 @@
         "type": "split",
         "heading": "Connecting software and hardware",
         "paragraphs": [
-          "For my senior design project at SDSU, my group created a bed of nails fixture to test SEA-310 amplifiers quickly, efficiently and easily. The test fixture utilizes a series of tests to search for manufacturing faults, record amplifier results for analysis and produce performance metrics of the device under test (DUT) with a user-friendly interface.",
+          "For my senior design project at SDSU, my group created a bed of nails fixture to test SEA-310 amplifiers quickly, efficiently and easily. The test fixture utilizes a series of tests to search for manufacturing faults, record amplifier results for analysis, and produce performance metrics of the device under test (DUT) with a user-friendly interface.",
           "The DUT connects to the Pancake test fixture through DUT test points that proxy signals to the Arduino using pogo pins and a ribbon cable. Measured outputs from the test fixture get relayed to 3 unique GUI pages for further analysis/debugging. I designed and programmed the software to interface with the Pancake test fixture."
         ],
         "image": {
@@ -104,7 +115,7 @@
           "alt": "Amplifier circuit board mounted on the Pancake bed-of-nails test fixture",
           "width": 1826,
           "height": 1246,
-          "caption": "This is our fixture with the PCB to test on top and our testing PCB and Arduino hidden underneath. The pogo pins allow us to measure at the test points."
+          "caption": "This is our Pancake fixture with the PCB to test on top and our testing PCB and Arduino hidden underneath. The pogo pins allow us to measure at the test points."
         }
       },
       {
@@ -113,7 +124,8 @@
         "heading": "My contribution",
         "paragraphs": [
           "I was responsible for the software for my senior design group project at SDSU. I used Electron and Node.js to create the desktop GUI for the Pancake test fixture.",
-          "The interface used JSON and serial communication over USB to send commands to the Arduino and receive measurements from the fixture."
+          "The interface used JSON and serial communication over USB to send commands to the Arduino and receive measurements from the fixture.",
+          "This data was collected, compiled, and compared against expected values as well as graphed for analysis."
         ]
       },
       {
@@ -121,7 +133,7 @@
         "type": "gallery",
         "heading": "The testing interface",
         "paragraphs": [
-          "A user may set each potentiometer (Drive, Tone, or Vol) to either CW, CCW or Mid using the drop down menus on this screen. Presence is also set to ON or OFF using the last drop down menu. Finally, an amplitude and frequency can be specified. If there is an Arduino connected, the “Generate Signal” button will light green at which point the user may click it to send the command to the Arduino. If the command is successful, the GUI will display the signal information below the green button."
+          "A user may set each potentiometer (Drive, Tone, or Volume) to either CounterClockwise, Clockwise or Mid using the drop down menus on this screen. Presence is also set to ON or OFF using the last drop down menu. Finally, an amplitude and frequency can be specified. If there is an Arduino connected, the “Generate Signal” button will light green at which point the user may click it to send the command to the Arduino. If the command is successful, the GUI will display the signal information below the green button."
         ],
         "images": [
           {
@@ -151,6 +163,18 @@
           "height": 1078,
           "caption": "This diagram shows a summary of how the logic behind our data transmission, data evaluation, and receiving data works."
         }
+      },
+      {
+        "id": "graduate",
+        "type": "image",
+        "heading": "SDSU Project",
+        "image": {
+          "src": "pancake/designGroup.jpg",
+          "alt": "Group photo of the team members for the Pancake project.",
+          "width": 2320,
+          "height": 1078,
+          "caption": "Pancake team members at SDSU graduation."
+        }
       }
     ]
   },
@@ -164,7 +188,7 @@
       "height": 1148,
       "caption": "The pinball game running on a Basys3 FPGA and a VGA display."
     },
-    "summary": "A virtual pinball game built in Verilog for a Basys3 FPGA, with scoring, flippers, sound, and a tilt mechanic.",
+    "summary": "A simple virtual pinball game built in Verilog for a Basys3 FPGA, with scoring, flippers, sound, and a tilt mechanic.",
     "technologies": [
       "Verilog",
       "Basys3 FPGA",
@@ -194,22 +218,7 @@
           "alt": "Block diagram connecting pinball logic, VGA sync, score display, clock, and buzzer modules",
           "width": 1902,
           "height": 1182,
-          "caption": "I have labeled all the inputs and outputs for each module and their respective number of bits."
-        }
-      },
-      {
-        "id": "sound",
-        "type": "split",
-        "heading": "Adding sound to the game",
-        "paragraphs": [
-          "I connected the speaker to the Basys3 board as shown so that it would play when points are scored."
-        ],
-        "image": {
-          "src": "pinball/buzzer.png",
-          "alt": "Buzzer wired to the Basys3 FPGA board",
-          "width": 1710,
-          "height": 1284,
-          "caption": "The buzzer provides an audible response when points are scored."
+          "caption": "The flashed code for verilog modules', inputs, and outputs as well as their bits are labeled."
         }
       },
       {
