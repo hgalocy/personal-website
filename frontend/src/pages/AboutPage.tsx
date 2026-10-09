@@ -32,17 +32,18 @@ export default function AboutPage() {
               hardware, and real-world behavior all have to work together.
             </p>
             <p>
-              I studied Computer Engineering at San Diego State University, which gave
-              me a strong foundation across both software and hardware. Since then, I’ve
-              spent several years working on production systems in C++ and Python,
-              building tools, interfaces, test infrastructure, and integrations across
-              complex software systems.
+              I studied Computer Engineering at San Diego State University,
+              which gave me a strong foundation across both software and
+              hardware. Since then, I’ve spent several years working on
+              production systems in C++ and Python, building tools, interfaces,
+              test infrastructure, and integrations across complex software
+              systems.
             </p>
             <p>
-              More recently, I’ve been especially interested in applied AI and robotics.
-              I’m currently building Navi, an AI companion robot that combines natural
-              conversation, persistent memory, speech recognition, text-to-speech, and
-              a real-time animated interface.
+              More recently, I’ve been especially interested in applied AI and
+              robotics. I’m currently building Navi, an AI companion robot that
+              combines natural conversation, persistent memory, speech
+              recognition, text-to-speech, and a real-time animated interface.
             </p>
           </div>
           <figure className="about-photo about-photo-geneva">
@@ -64,8 +65,8 @@ export default function AboutPage() {
           </div>
           <div>
             <p className="about-section-description">
-              Technologies and areas I’ve worked with across production software,
-              personal projects, hardware integration, and AI systems.
+              Technologies and areas I’ve worked with across production
+              software, personal projects, hardware integration, and AI systems.
             </p>
             <ul className="about-tags" aria-label="Technologies and areas">
               {areas.map((area) => (
@@ -91,8 +92,12 @@ export default function AboutPage() {
             <p className="about-kicker">Beyond the keyboard</p>
             <h2 id="about-personal-title">A little more me</h2>
             <p>
-              Outside of work, I’m usually hanging out with my Australian Shepherd, Penny, at hot yoga, rollerblading around San Diego, or finding an excuse to get to the mountains and ski.
-              I love traveling, video games, and making things... although my personal projects have a habit of turning “I wonder if I could build that” into a much bigger undertaking than planned.
+              Outside of work, I’m usually hanging out with my Australian
+              Shepherd, Penny, at hot yoga, rollerblading around San Diego, or
+              finding an excuse to get to the mountains and ski. I love
+              traveling, video games, and making things... although my personal
+              projects have a habit of turning “I wonder if I could build that”
+              into a much bigger undertaking than planned.
             </p>
           </div>
         </section>

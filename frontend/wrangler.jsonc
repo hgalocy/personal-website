@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
-  "name": "hannah-galocy-frontend-preview",
+  "name": "hannah-galocy-website",
   "compatibility_date": "2026-09-29",
   "workers_dev": true,
   "assets": {

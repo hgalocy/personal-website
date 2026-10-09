@@ -90,13 +90,7 @@
       "caption": "The manufacturing test interface, built with Electron and Node.js showing a successful end-to-end test."
     },
     "summary": "A desktop interface for a bed of nails test fixture for SEA-310 amplifiers, collecting measurements, and diagnosing manufacturing faults.",
-    "technologies": [
-      "Electron",
-      "Node.js",
-      "Arduino",
-      "Serial / USB",
-      "JSON"
-    ],
+    "technologies": ["Electron", "Node.js", "Arduino", "Serial / USB", "JSON"],
     "externalLink": {
       "label": "View on GitHub",
       "url": "https://github.com/hgalocy/Senior-Design-Software"
@@ -189,12 +183,7 @@
       "caption": "The pinball game running on a Basys3 FPGA and a VGA display."
     },
     "summary": "A simple virtual pinball game built in Verilog for a Basys3 FPGA, with scoring, flippers, sound, and a tilt mechanic.",
-    "technologies": [
-      "Verilog",
-      "Basys3 FPGA",
-      "Vivado",
-      "VGA"
-    ],
+    "technologies": ["Verilog", "Basys3 FPGA", "Vivado", "VGA"],
     "externalLink": {
       "label": "View on GitHub",
       "url": "https://github.com/hgalocy/pinball_basys3"
