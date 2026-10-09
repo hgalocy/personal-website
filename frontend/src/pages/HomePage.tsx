@@ -17,7 +17,8 @@ export default function HomePage() {
             software<span className="smile"> :)</span>
           </h1>
           <p className="hero-description">
-            Software engineer focused on AI, robotics, and computer vision.
+            Software engineer creating with applied AI, robotics, and
+            intelligent systems.
           </p>
           <div className="hero-actions">
             <Link className="button-primary" to="/work">
