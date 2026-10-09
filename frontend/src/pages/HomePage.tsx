@@ -1,5 +1,5 @@
 import { Link } from 'react-router'
-import beachPortrait from '../../data/hannah_beach.jpeg'
+import beachPortrait from '../../data/images/home/hannah_beach.jpeg'
 
 export default function HomePage() {
   return (

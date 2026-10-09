@@ -8,7 +8,7 @@ export default function SiteHeader() {
       </Link>
       <nav aria-label="Main navigation">
         <NavLink to="/work">Work</NavLink>
-        <Link to="/#about">About</Link>
+        <NavLink to="/about">About</NavLink>
         <a href="https://www.linkedin.com/in/hannah-galocy-0b10b3153/">
           Contact
         </a>

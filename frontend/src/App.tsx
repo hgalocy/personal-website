@@ -1,6 +1,7 @@
 ﻿import { Route, Routes } from 'react-router'
 import RouteFocus from './components/RouteFocus'
 import SiteHeader from './components/SiteHeader'
+import AboutPage from './pages/AboutPage'
 import HomePage from './pages/HomePage'
 import NotFoundPage from './pages/NotFoundPage'
 import ProjectPage from './pages/ProjectPage'
@@ -17,6 +18,7 @@ export default function App() {
       <main id="main-content" tabIndex={-1}>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
           <Route path="/work" element={<WorkPage />} />
           <Route path="/work/:slug" element={<ProjectPage />} />
           <Route path="*" element={<NotFoundPage />} />
