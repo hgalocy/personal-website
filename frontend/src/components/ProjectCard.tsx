@@ -18,7 +18,7 @@ export default function ProjectCard({ project }: { project: Project }) {
           <h2>{project.title}</h2>
           <span aria-hidden="true">↗</span>
         </div>
-        <p className="project-card-label">View project</p>
+        <p className="project-card-summary">{project.cardCaption}</p>
       </Link>
     </li>
   )

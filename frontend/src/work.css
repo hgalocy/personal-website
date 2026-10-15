@@ -75,10 +75,11 @@
   color: var(--color-accent);
 }
 
-.project-card-label {
+.project-card-summary {
   margin: 0.5rem 0 0;
   color: var(--color-muted);
   font-size: 0.8125rem;
+  line-height: 1.6;
   letter-spacing: 0.03em;
 }
 

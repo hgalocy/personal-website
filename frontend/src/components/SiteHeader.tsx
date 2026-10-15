@@ -9,6 +9,7 @@ export default function SiteHeader() {
       <nav aria-label="Main navigation">
         <NavLink to="/work">Work</NavLink>
         <NavLink to="/about">About</NavLink>
+        <NavLink to="/resume">Resume</NavLink>
         <a href="https://www.linkedin.com/in/hannah-galocy-0b10b3153/">
           Contact
         </a>

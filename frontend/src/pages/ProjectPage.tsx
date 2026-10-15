@@ -7,9 +7,12 @@ import '../project.css'
 
 export default function ProjectPage() {
   const { slug } = useParams()
-  const project = projects.find((entry) => entry.slug === slug)
+  const projectIndex = projects.findIndex((entry) => entry.slug === slug)
+  const project = projects[projectIndex]
 
   if (!project) return <NotFoundPage />
+
+  const nextProject = projects[(projectIndex + 1) % projects.length]
 
   return (
     <article className="case-study" aria-labelledby="project-title">
@@ -64,6 +67,14 @@ export default function ProjectPage() {
             {project.externalLink.label} <span aria-hidden="true">↗</span>
           </a>
         )}
+        <Link
+          className="button-primary"
+          to={`/work/${nextProject.slug}`}
+          rel="next"
+        >
+          <span>Next project: {nextProject.title}</span>
+          <span aria-hidden="true">&rarr;</span>
+        </Link>
       </footer>
     </article>
   )

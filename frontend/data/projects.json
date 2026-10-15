@@ -2,6 +2,7 @@
   {
     "slug": "navi",
     "title": "Navi AI Companion Bot",
+    "cardCaption": "An AI companion robot with voice conversations, persistent memory, and animated facial expressions.",
     "heroImage": {
       "src": "placeholder/project-two.svg",
       "alt": "Navi's animated virtual face displayed on screen",
@@ -22,7 +23,7 @@
       "Jetson Xavier NX"
     ],
     "externalLink": {
-      "label": "View Navi on GitHub",
+      "label": "View GitHub",
       "url": "https://github.com/hgalocy"
     },
     "sections": [
@@ -82,6 +83,7 @@
   {
     "slug": "pancake",
     "title": "Pancake Test Fixture",
+    "cardCaption": "A desktop application for amplifier testing, with measurement collection and manufacturing fault diagnostics.",
     "heroImage": {
       "src": "pancake/pancakeMain.png",
       "alt": "Pancake manufacturing test interface with amplifier test results",
@@ -90,7 +92,13 @@
       "caption": "The manufacturing test interface, built with Electron and Node.js showing a successful end-to-end test."
     },
     "summary": "A desktop interface for a bed of nails test fixture for SEA-310 amplifiers, collecting measurements, and diagnosing manufacturing faults.",
-    "technologies": ["Electron", "Node.js", "Arduino", "Serial / USB", "JSON"],
+    "technologies": [
+      "Electron",
+      "Node.js",
+      "Arduino",
+      "Serial / USB",
+      "JSON"
+    ],
     "externalLink": {
       "label": "View on GitHub",
       "url": "https://github.com/hgalocy/Senior-Design-Software"
@@ -175,6 +183,7 @@
   {
     "slug": "pinball",
     "title": "Basys3 Pinball",
+    "cardCaption": "A virtual pinball game built in Verilog for a Basys3 FPGA, with scoring, flippers, sound, and tilt.",
     "heroImage": {
       "src": "pinball/pinballMain.png",
       "alt": "Basys3 FPGA board displaying a score beneath the virtual pinball game on a monitor",
@@ -182,8 +191,13 @@
       "height": 1148,
       "caption": "The pinball game running on a Basys3 FPGA and a VGA display."
     },
-    "summary": "A simple virtual pinball game built in Verilog for a Basys3 FPGA, with scoring, flippers, sound, and a tilt mechanic.",
-    "technologies": ["Verilog", "Basys3 FPGA", "Vivado", "VGA"],
+    "summary": "A virtual pinball game built in Verilog for a Basys3 FPGA, with scoring, flippers, sound, and a tilt mechanic.",
+    "technologies": [
+      "Verilog",
+      "Basys3 FPGA",
+      "Vivado",
+      "VGA"
+    ],
     "externalLink": {
       "label": "View on GitHub",
       "url": "https://github.com/hgalocy/pinball_basys3"

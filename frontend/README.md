@@ -125,6 +125,7 @@ Each project contains:
 | Field           | Purpose                                                                  |
 | --------------- | ------------------------------------------------------------------------ |
 | `slug`, `title` | Stable URL segment and display title.                                    |
+| `cardCaption`   | Short summary beneath the project title on the Work card.               |
 | `heroImage`     | Image object used on the card and detail page.                           |
 | `summary`       | Short introduction near the page title.                                  |
 | `technologies`  | Optional array of tag strings; omit it to hide the tags.                 |

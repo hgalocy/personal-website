@@ -31,6 +31,11 @@ export default function AboutPage() {
               I’m a software engineer who likes building systems where software,
               hardware, and real-world behavior all have to work together.
             </p>
+            <div className="about-actions">
+              <Link className="button-primary" to="/resume">
+                View My Resume <span aria-hidden="true">↗</span>
+              </Link>
+            </div>
             <p>
               I studied Computer Engineering at San Diego State University,
               which gave me a strong foundation across both software and
@@ -112,7 +117,7 @@ export default function AboutPage() {
           </div>
           <div className="about-actions">
             <Link className="button-primary" to="/work">
-              View my work <span aria-hidden="true">↗</span>
+              View My Work <span aria-hidden="true">↗</span>
             </Link>
             <a
               className="github-link"

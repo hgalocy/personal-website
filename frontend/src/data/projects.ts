@@ -29,6 +29,7 @@ export type ProjectSection = SectionBase &
 export interface Project {
   slug: string
   title: string
+  cardCaption: string
   heroImage: ProjectImage
   summary: string
   technologies?: string[]
