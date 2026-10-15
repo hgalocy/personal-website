@@ -1,202 +1,84 @@
-# Hannah Galocy — Personal Website
+# hannahgalocy.com
 
-Personal portfolio built with React and TypeScript and hosted on Cloudflare Workers.
+Personal portfolio served as static assets on Cloudflare Workers.
 
-## Tech Stack
+## Technologies
 
-| Technology         | Purpose                                      |
-| ------------------ | -------------------------------------------- |
-| React              | Component-based user interface               |
-| TypeScript         | Static typing for JavaScript                 |
-| Vite               | Development server and production build tool |
-| ESLint             | Code-quality and error checking              |
-| Prettier           | Consistent code formatting                   |
-| Cloudflare Workers | Hosts the production static assets           |
-| Wrangler           | Cloudflare development and deployment CLI    |
+| Technology                    | Purpose                                           |
+| ----------------------------- | ------------------------------------------------- |
+| React + TypeScript            | Page components and type checking                 |
+| React Router                  | Page navigation                                   |
+| CSS                           | Styling and responsive layouts                    |
+| Vite                          | Development server and production builds          |
+| ESLint + Prettier             | Code checks and formatting                        |
+| Cloudflare Workers + Wrangler | Hosting, local Cloudflare preview, and deployment |
 
-## Development
+## Local setup
 
-Requires Node.js 22.22+ or 24+.
+Requires npm and Node.js 22.22+ within the 22.x release line, or Node.js 24+.
+Run commands from the repository root, where `package.json` lives.
 
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 
-The development server runs at:
+Open `http://localhost:5173`
+If PowerShell blocks `npm` or `npx`, use `npm.cmd` or `npx.cmd`.
 
-`http://localhost:5173`
+## Commands
 
-## Code Quality
+| Command                  | What it does                                                                                                     |
+| ------------------------ | ---------------------------------------------------------------------------------------------------------------- |
+| `npm ci`                 | Installs exact lockfile dependencies.                                                                            |
+| `npm install`            | Installs dependencies and updates the lockfile when needed.                                                      |
+| `npm run dev`            | Starts the development server with live updates.                                                                 |
+| `npm run format`         | Rewrites files using Prettier formatting.                                                                        |
+| `npm run format:check`   | Checks formatting without changing files.                                                                        |
+| `npm run lint`           | Checks code with ESLint; warnings also fail.                                                                     |
+| `npm run lint:fix`       | Applies available ESLint fixes; remaining issues need manual changes.                                            |
+| `npm run build`          | Checks TypeScript and builds the production site into `dist/`.                                                   |
+| `npm run check`          | Runs lint, formatting checks, TypeScript checks, and the production build. Does not fix files.                   |
+| `npm run preview`        | Serves the existing production build locally. Run `npm run build` first.                                         |
+| `npm run preview:worker` | Builds and previews locally through Wrangler.                                                                    |
+| `npm run deploy:dry-run` | Runs all checks and prepares deployment without publishing.                                                      |
+| `npm run deploy`         | Runs all checks, builds, and publishes to Cloudflare.                                                            |
 
-Run all checks:
+After editing, run `npm run format` and `npm run check`. When ready to publish,
+run `npm run deploy`; it repeats the checks automatically.
 
-```bash
-npm run check
-```
+## Where to make changes
 
-This runs:
+| Change                                          | Location                                                                 |
+| ----------------------------------------------- | ------------------------------------------------------------------------ |
+| Home/About content, portraits, and social links | `src/pages/HomePage.tsx`, `src/pages/AboutPage.tsx`                      |
+| Shared navigation and Contact link              | `src/components/SiteHeader.tsx`                                          |
+| Projects and case studies                       | `data/projects.json`; field definitions in `src/data/projects.ts`        |
+| Images                                          | `data/images/`; project JSON paths are relative to this folder           |
+| Resume                                          | `data/Hannah_Galocy_Resume_2026_Public.pdf`                              |
+| Shared styles and home layout                   | `src/index.css`                                                          |
+| Page styles                                     | `src/about.css`, `src/projects.css`, `src/project.css`, `src/resume.css` |
+| Routes and default page metadata                | `src/App.tsx` and `index.html`                                           |
 
-- ESLint
-- Prettier formatting checks
-- TypeScript type checking
-- Vite production build
+Good to know:
 
-Individual commands:
+- Project `cardCaption` is the card description; `summary` is the case-study introduction. JSON array order controls cards and Next project navigation, which loops back to the first project.
+- Sections support `text`, `image`, `split`, and `gallery`. Copy an existing section and give it a unique `id`.
+- Use forward slashes and exact filename capitalization for assets. Project images support PNG, JPG/JPEG, SVG, WebP, and AVIF; include alt text and preferably dimensions.
+- Replace the resume using the same filename. If renaming it, update the import and download filename in `src/pages/ResumePage.tsx`.
+- Content, images, and the resume are bundled at build time. Redeploy to publish changes; edit source files rather than generated `dist/` files.
 
-```bash
-npm run lint
-npm run lint:fix
-npm run format:check
-npm run format
-```
+## Cloudflare setup
 
-## Build
-
-Create a production build:
-
-```bash
-npm run build
-```
-
-Vite outputs the optimized site to `dist/`.
-
-Preview the production build locally:
-
-```bash
-npm run preview
-```
-
-## Deployment
-
-Deployed as static assets using Cloudflare Workers.
-Deployment configuration lives in `wrangler.jsonc`.
-
-### Authenticate
-
-First-time setup:
+Before the first deployment, or when authentication expires:
 
 ```bash
 npx wrangler login
 npx wrangler whoami
 ```
 
-### Test with Cloudflare locally
+`login` authenticates Wrangler; `whoami` confirms the account.
 
-```bash
-npm run preview:worker
-```
-
-### Validate deployment
-
-```bash
-npm run deploy:dry-run
-```
-
-### Deploy
-
-```bash
-npm run deploy
-```
-
-The deployment process runs the project checks and production build before
-uploading `dist/` to Cloudflare.
-
-## Architecture
-
-### Pages and project data
-
-React Router connects `/` to the existing homepage, `/projects` to the project grid,
-and `/projects/:slug` to a project detail page. The shared header uses router links
-for internal navigation. Unknown URLs and project slugs show a not-found page.
-
-Edit `data/projects.json` to update Navi, Pancake, and Pinball. The typed module
-`src/data/projects.ts` imports this JSON once. `ProjectPage` passes each entry to
-`ProjectCard`; the shared `ProjectPage` finds the same entry by its URL slug.
-Both views use the same title and hero image.
-
-Each project contains:
-
-| Field           | Purpose                                                                  |
-| --------------- | ------------------------------------------------------------------------ |
-| `slug`, `title` | Stable URL segment and display title.                                    |
-| `cardCaption`   | Short summary beneath the project title on the Projects card.            |
-| `heroImage`     | Image object used on the card and detail page.                           |
-| `summary`       | Short introduction near the page title.                                  |
-| `technologies`  | Optional array of tag strings; omit it to hide the tags.                 |
-| `externalLink`  | Optional `{ "label": "View on GitHub", "url": "https://..." }`.          |
-| `sections`      | Ordered array of content sections. Add, remove, or reorder these freely. |
-
-Every section needs a unique `id`, a `type`, and a `heading`:
-
-| Type      | Content fields                                  | Layout                                                                                                            |
-| --------- | ----------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
-| `text`    | `paragraphs`                                    | Heading beside readable-width paragraphs on desktop.                                                              |
-| `image`   | `image`, optional `paragraphs`                  | Wide image below its heading and any text.                                                                        |
-| `split`   | `paragraphs`, `image`, optional `imagePosition` | Text beside one image; `imagePosition` is `left` or `right` (default). Stacks with text first on smaller screens. |
-| `gallery` | `images`, optional `paragraphs`                 | Responsive grid supporting any number of images.                                                                  |
-
-`ProjectSection` selects the layout by `type`. `ProjectFigure` handles image
-dimensions, alt text, optional captions, and a link to view the original image.
-Each paragraph is a separate string, rendered as text, not HTML.
-
-Example section:
-
-```json
-{
-  "id": "fixture",
-  "type": "split",
-  "heading": "Connecting software and hardware",
-  "paragraphs": ["First paragraph.", "Second paragraph."],
-  "imagePosition": "right",
-  "image": {
-    "src": "pancake/fixture.png",
-    "alt": "Amplifier circuit board on the test fixture",
-    "width": 1826,
-    "height": 1246,
-    "caption": "Optional image caption."
-  }
-}
-```
-
-Image `src` values are relative to `data/images/`, so `pancake/fixture.png` means
-`data/images/pancake/fixture.png`. Use forward slashes in JSON, including
-on Windows. The same image object format applies to `heroImage`, `image`, and
-each entry in `images`. `src` and `alt` are required; captions and original pixel
-dimensions are optional. Including dimensions avoids layout jumps as images load.
-
-The data module uses Vite's asset imports to resolve these files to production
-URLs; plain `data/images/...` browser URLs would not survive the build. Supported
-formats are PNG, JPG/JPEG, SVG, WebP, and AVIF. Missing images and unsupported
-section types produce descriptive errors. JSON is bundled at build time, so
-redeploy after changing the data.
-
-Pancake and Pinball use the supplied images and legacy project descriptions.
-Navi uses placeholder artwork from `data/images/placeholder/`, placeholder copy,
-and an `example.com` link until its own content is available. No legacy files
-are imported at runtime or modified by the new pages.
-
-`SiteHeader` is shared across pages. `HomePage` contains the existing hero;
-`projects.css` styles the Projects grid, and `project.css` contains the new detail-page
-styles. Neither changes the hero stylesheet.
-Wrangler's existing `single-page-application` asset fallback supports direct
-visits and refreshes at URLs such as `/projects/pinball`.
-
-Routing follows React Router's
-[declarative setup](https://reactrouter.com/start/declarative/installation).
-Local image resolution uses [Vite glob imports](https://vite.dev/guide/features.html#glob-import).
-
-```text
-React + TypeScript
-        ↓
-       Vite
-        ↓
-      dist/
-        ↓
-Cloudflare Workers
-        ↓
-       CDN
-```
-
-The current deployment serves static assets only. No backend Worker is required
-at this stage.
+`wrangler.jsonc` targets `hannah-galocy-website` and uploads `dist/`. Keep its
+`single-page-application` fallback so direct page links and refreshes work.
+The site currently needs no backend, database, or API keys.
