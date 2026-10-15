@@ -4,7 +4,7 @@ import type { Project } from '../data/projects'
 export default function ProjectCard({ project }: { project: Project }) {
   return (
     <li>
-      <Link className="project-card" to={`/work/${project.slug}`}>
+      <Link className="project-card" to={`/projects/${project.slug}`}>
         <div className="project-card-image">
           <img
             src={project.heroImage.src}

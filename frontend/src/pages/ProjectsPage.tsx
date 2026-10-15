@@ -1,19 +1,19 @@
 import ProjectCard from '../components/ProjectCard'
 import { projects } from '../data/projects'
 
-export default function WorkPage() {
+export default function ProjectsPage() {
   return (
-    <section className="work-page" aria-labelledby="work-title">
-      <title>Work — Hannah Galocy</title>
-      <div className="work-intro">
+    <section className="projects-page" aria-labelledby="projects-title">
+      <title>Projects — Hannah Galocy</title>
+      <div className="projects-intro">
         <p className="eyebrow">
           <span className="eyebrow-line" aria-hidden="true" />
           Projects & experiments
         </p>
-        <h1 className="work-title" id="work-title">
-          Work
+        <h1 className="projects-title" id="projects-title">
+          Projects
         </h1>
-        <p className="work-summary">
+        <p className="projects-summary">
           A collection of things I’m building and exploring.
         </p>
       </div>

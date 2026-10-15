@@ -21,8 +21,8 @@ export default function HomePage() {
             intelligent systems.
           </p>
           <div className="hero-actions">
-            <Link className="button-primary" to="/work">
-              View my work <span aria-hidden="true">↗</span>
+            <Link className="button-primary" to="/projects">
+              View my projects <span aria-hidden="true">↗</span>
             </Link>
             <a className="github-link" href="https://github.com/hgalocy">
               GitHub <span aria-hidden="true">↗</span>

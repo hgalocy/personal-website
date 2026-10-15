@@ -17,8 +17,8 @@ export default function ProjectPage() {
   return (
     <article className="case-study" aria-labelledby="project-title">
       <title>{`${project.title} \u2014 Hannah Galocy`}</title>
-      <Link className="back-link" to="/work">
-        <span aria-hidden="true">&larr;</span> Back to Work
+      <Link className="back-link" to="/projects">
+        <span aria-hidden="true">&larr;</span> Back to Projects
       </Link>
 
       <header className="case-header">
@@ -59,8 +59,8 @@ export default function ProjectPage() {
       </div>
 
       <footer className="case-footer">
-        <Link className="back-link" to="/work">
-          <span aria-hidden="true">&larr;</span> Back to Work
+        <Link className="back-link" to="/projects">
+          <span aria-hidden="true">&larr;</span> Back to Projects
         </Link>
         {project.externalLink && (
           <a className="case-external-link" href={project.externalLink.url}>
@@ -69,7 +69,7 @@ export default function ProjectPage() {
         )}
         <Link
           className="button-primary"
-          to={`/work/${nextProject.slug}`}
+          to={`/projects/${nextProject.slug}`}
           rel="next"
         >
           <span>Next project: {nextProject.title}</span>

@@ -111,12 +111,12 @@ uploading `dist/` to Cloudflare.
 
 ### Pages and project data
 
-React Router connects `/` to the existing homepage, `/work` to the project grid,
-and `/work/:slug` to a project detail page. The shared header uses router links
+React Router connects `/` to the existing homepage, `/projects` to the project grid,
+and `/projects/:slug` to a project detail page. The shared header uses router links
 for internal navigation. Unknown URLs and project slugs show a not-found page.
 
 Edit `data/projects.json` to update Navi, Pancake, and Pinball. The typed module
-`src/data/projects.ts` imports this JSON once. `WorkPage` passes each entry to
+`src/data/projects.ts` imports this JSON once. `ProjectPage` passes each entry to
 `ProjectCard`; the shared `ProjectPage` finds the same entry by its URL slug.
 Both views use the same title and hero image.
 
@@ -125,7 +125,7 @@ Each project contains:
 | Field           | Purpose                                                                  |
 | --------------- | ------------------------------------------------------------------------ |
 | `slug`, `title` | Stable URL segment and display title.                                    |
-| `cardCaption`   | Short summary beneath the project title on the Work card.               |
+| `cardCaption`   | Short summary beneath the project title on the Projects card.            |
 | `heroImage`     | Image object used on the card and detail page.                           |
 | `summary`       | Short introduction near the page title.                                  |
 | `technologies`  | Optional array of tag strings; omit it to hide the tags.                 |
@@ -182,10 +182,10 @@ and an `example.com` link until its own content is available. No legacy files
 are imported at runtime or modified by the new pages.
 
 `SiteHeader` is shared across pages. `HomePage` contains the existing hero;
-`work.css` styles the Work grid, and `project.css` contains the new detail-page
+`projects.css` styles the Projects grid, and `project.css` contains the new detail-page
 styles. Neither changes the hero stylesheet.
 Wrangler's existing `single-page-application` asset fallback supports direct
-visits and refreshes at URLs such as `/work/pinball`.
+visits and refreshes at URLs such as `/projects/pinball`.
 
 Routing follows React Router's
 [declarative setup](https://reactrouter.com/start/declarative/installation).

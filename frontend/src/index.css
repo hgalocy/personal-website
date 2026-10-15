@@ -44,9 +44,11 @@ a:focus-visible {
   max-width: 1800px;
   min-height: 100svh;
   margin-inline: auto;
-  background: radial-gradient(ellipse at 52% 45%,
-      color-mix(in srgb, var(--color-surface) 24%, transparent),
-      transparent 65%);
+  background: radial-gradient(
+    ellipse at 52% 45%,
+    color-mix(in srgb, var(--color-surface) 24%, transparent),
+    transparent 65%
+  );
 }
 
 .skip-link {
@@ -229,11 +231,13 @@ h1 {
   position: absolute;
   inset: 0;
   content: '';
-  background: linear-gradient(to bottom,
-      var(--color-bg),
-      transparent 18%,
-      transparent 75%,
-      var(--color-bg));
+  background: linear-gradient(
+    to bottom,
+    var(--color-bg),
+    transparent 18%,
+    transparent 75%,
+    var(--color-bg)
+  );
   pointer-events: none;
 }
 
@@ -242,8 +246,10 @@ h1 {
     container-type: inline-size;
     --hero-frame-height: min(780px, calc(100svh - 112px));
     /* The portrait is 3:4. Keep the original cover crop's 42% top offset. */
-    --photo-top-crop: max(0px,
-        calc((55cqw * 4 / 3 - var(--hero-frame-height)) * 0.42));
+    --photo-top-crop: max(
+      0px,
+      calc((55cqw * 4 / 3 - var(--hero-frame-height)) * 0.42)
+    );
   }
 
   .hero-content {
@@ -272,21 +278,25 @@ h1 {
   }
 
   .hero-image::after {
-    background: linear-gradient(to bottom,
-        var(--color-bg),
-        transparent calc(var(--hero-frame-height) * 0.18),
-        transparent 75%,
-        var(--color-bg));
+    background: linear-gradient(
+      to bottom,
+      var(--color-bg),
+      transparent calc(var(--hero-frame-height) * 0.18),
+      transparent 75%,
+      var(--color-bg)
+    );
   }
 }
 
 @media (min-width: 1800px) {
   .hero-image {
-    mask-image: linear-gradient(to right,
-        transparent,
-        black 40%,
-        black 90%,
-        transparent);
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 40%,
+      black 90%,
+      transparent
+    );
   }
 }
 

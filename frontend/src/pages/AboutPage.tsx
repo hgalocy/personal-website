@@ -116,8 +116,8 @@ export default function AboutPage() {
             <h2 id="about-connect-title">See what I’m building. Say hello.</h2>
           </div>
           <div className="about-actions">
-            <Link className="button-primary" to="/work">
-              View My Work <span aria-hidden="true">↗</span>
+            <Link className="button-primary" to="/projects">
+              View My Projects <span aria-hidden="true">↗</span>
             </Link>
             <a
               className="github-link"

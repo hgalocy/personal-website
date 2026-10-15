@@ -6,20 +6,20 @@
   outline: none;
 }
 
-.work-page {
+.projects-page {
   padding: clamp(2.5rem, 5vw, 5rem) var(--page-gutter) 6rem;
 }
 
-.work-intro {
+.projects-intro {
   margin-bottom: clamp(2.5rem, 5vw, 4.5rem);
 }
 
-.work-title {
+.projects-title {
   font-size: clamp(3rem, 6vw, 5.75rem);
   overflow-wrap: anywhere;
 }
 
-.work-summary {
+.projects-summary {
   max-width: 36rem;
   margin: 1.5rem 0 0;
   color: var(--color-muted);
