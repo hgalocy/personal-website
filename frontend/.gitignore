@@ -1,8 +1,0 @@
-node_modules/
-dist/
-*.local
-*.tsbuildinfo
-npm-debug.log*
-.wrangler/
-.dev.vars*
-.env*
