@@ -28,21 +28,21 @@ If PowerShell blocks `npm` or `npx`, use `npm.cmd` or `npx.cmd`.
 
 ## Commands
 
-| Command                  | What it does                                                                                                     |
-| ------------------------ | ---------------------------------------------------------------------------------------------------------------- |
-| `npm ci`                 | Installs exact lockfile dependencies.                                                                            |
-| `npm install`            | Installs dependencies and updates the lockfile when needed.                                                      |
-| `npm run dev`            | Starts the development server with live updates.                                                                 |
-| `npm run format`         | Rewrites files using Prettier formatting.                                                                        |
-| `npm run format:check`   | Checks formatting without changing files.                                                                        |
-| `npm run lint`           | Checks code with ESLint; warnings also fail.                                                                     |
-| `npm run lint:fix`       | Applies available ESLint fixes; remaining issues need manual changes.                                            |
-| `npm run build`          | Checks TypeScript and builds the production site into `dist/`.                                                   |
-| `npm run check`          | Runs lint, formatting checks, TypeScript checks, and the production build. Does not fix files.                   |
-| `npm run preview`        | Serves the existing production build locally. Run `npm run build` first.                                         |
-| `npm run preview:worker` | Builds and previews locally through Wrangler.                                                                    |
-| `npm run deploy:dry-run` | Runs all checks and prepares deployment without publishing.                                                      |
-| `npm run deploy`         | Runs all checks, builds, and publishes to Cloudflare.                                                            |
+| Command                  | What it does                                                                                   |
+| ------------------------ | ---------------------------------------------------------------------------------------------- |
+| `npm ci`                 | Installs exact lockfile dependencies.                                                          |
+| `npm install`            | Installs dependencies and updates the lockfile when needed.                                    |
+| `npm run dev`            | Starts the development server with live updates.                                               |
+| `npm run format`         | Rewrites files using Prettier formatting.                                                      |
+| `npm run format:check`   | Checks formatting without changing files.                                                      |
+| `npm run lint`           | Checks code with ESLint; warnings also fail.                                                   |
+| `npm run lint:fix`       | Applies available ESLint fixes; remaining issues need manual changes.                          |
+| `npm run build`          | Checks TypeScript and builds the production site into `dist/`.                                 |
+| `npm run check`          | Runs lint, formatting checks, TypeScript checks, and the production build. Does not fix files. |
+| `npm run preview`        | Serves the existing production build locally. Run `npm run build` first.                       |
+| `npm run preview:worker` | Builds and previews locally through Wrangler.                                                  |
+| `npm run deploy:dry-run` | Runs all checks and prepares deployment without publishing.                                    |
+| `npm run deploy`         | Runs all checks, builds, and publishes to Cloudflare.                                          |
 
 After editing, run `npm run format` and `npm run check`. When ready to publish,
 run `npm run deploy`; it repeats the checks automatically.
