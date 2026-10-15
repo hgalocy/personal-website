@@ -1,0 +1,160 @@
+.about-page {
+  max-width: 1360px;
+  margin-inline: auto;
+  padding: clamp(2.5rem, 5vw, 5rem) var(--page-gutter) 6rem;
+}
+
+.about-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 300px);
+  align-items: center;
+  gap: clamp(2.5rem, 6vw, 6rem);
+}
+
+.about-title {
+  font-size: clamp(3.5rem, 6vw, 6rem);
+}
+
+.about-title span {
+  color: var(--color-accent);
+}
+
+.about-copy {
+  max-width: 60ch;
+}
+
+.about-copy p:not(.eyebrow, .about-kicker, .about-lead) {
+  margin: 1.25rem 0 0;
+  color: var(--color-muted);
+  line-height: 1.85;
+}
+
+.about-copy .about-lead {
+  margin-top: 2rem;
+  color: var(--color-text);
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  line-height: 1.6;
+  letter-spacing: -0.02em;
+}
+
+.about-photo {
+  width: 100%;
+  margin: 0;
+}
+
+.about-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.about-photo figcaption {
+  margin-top: 0.875rem;
+  color: var(--color-muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+}
+
+.about-page h2 {
+  margin: 0;
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+}
+
+.about-kicker {
+  margin: 0 0 1rem;
+  color: var(--color-accent);
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.about-areas {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+  gap: clamp(2rem, 6vw, 6rem);
+  margin-block: clamp(4rem, 8vw, 7rem);
+  padding-block: clamp(2.5rem, 5vw, 4rem);
+  border-block: 1px solid
+    color-mix(in srgb, var(--color-lavender) 22%, transparent);
+}
+
+.about-section-description {
+  max-width: 52ch;
+  margin: 0 0 1.5rem;
+  color: var(--color-muted);
+  line-height: 1.8;
+}
+
+.about-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.about-tags li {
+  padding: 0.55rem 0.95rem;
+  border: 1px solid color-mix(in srgb, var(--color-lavender) 35%, transparent);
+  border-radius: 999px;
+  font-size: 0.875rem;
+}
+
+.about-personal {
+  display: grid;
+  grid-template-columns: minmax(180px, 260px) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(2.5rem, 7vw, 7rem);
+}
+
+.about-connect {
+  margin-top: clamp(4rem, 8vw, 7rem);
+}
+
+.about-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem 2rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 900px) {
+  .about-intro {
+    grid-template-columns: minmax(0, 1fr) 220px;
+    align-items: start;
+  }
+
+  .about-photo-geneva {
+    margin-top: 4rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-intro,
+  .about-areas,
+  .about-personal {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+  }
+
+  .about-photo-geneva {
+    max-width: 260px;
+    margin: 0 auto;
+  }
+
+  .about-photo-tokyo {
+    max-width: 240px;
+    margin-inline: auto;
+  }
+
+  .about-personal .about-copy {
+    grid-row: 1;
+  }
+}

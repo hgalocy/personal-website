@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" fill="none">
+  <defs>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientTransform="translate(600 440) scale(550)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#394763"/>
+      <stop offset="1" stop-color="#0d1828"/>
+    </radialGradient>
+    <linearGradient id="portal" x1="500" y1="200" x2="700" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#d59a9b"/>
+      <stop offset=".6" stop-color="#777b9d"/>
+      <stop offset="1" stop-color="#394763"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#glow)" d="M0 0h1200v800H0z"/>
+  <path d="M400 630V350a200 200 0 0 1 400 0v280" stroke="#777b9d" stroke-opacity=".3"/>
+  <path d="M440 630V350a160 160 0 0 1 320 0v280" stroke="#777b9d" stroke-opacity=".6"/>
+  <path d="M480 630V350a120 120 0 0 1 240 0v280Z" fill="url(#portal)"/>
+  <path d="M0 630h1200M480 630 360 800M720 630l120 170M0 700h1200M0 780h1200" stroke="#777b9d" stroke-opacity=".3"/>
+  <circle cx="600" cy="350" r="35" fill="#f3efe5" opacity=".75"/>
+  <path d="M600 630v170" stroke="#d59a9b" stroke-opacity=".4"/>
+</svg>
